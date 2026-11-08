@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Простой список задач с сохранением в localStorage" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <main class="app">
+        <header class="app-header">
+            <h1>Мои задачи</h1>
+            <p class="subtitle">
+                Добавляйте, отмечайте и удаляйте задачи. Данные сохраняются локально в браузере.
+            </p>
+        </header>
+
+        <form id="task-form" class="task-form" autocomplete="off">
+            <label class="visually-hidden" for="task-input">
+                Новая задача
+            </label>
+
+            <input id="task-input"
+                   type="text"
+                   placeholder="Например: купить продукты"
+                   maxlength="160"
+                   required />
+
+            <button type="submit" class="btn btn-primary">
+                Добавить
+            </button>
+        </form>
+
+        <section class="list-section" aria-live="polite">
+            <ul id="task-list" class="task-list"></ul>
+        </section>
+
+        <footer class="app-footer">
+            <span id="counter" class="counter">Нет задач</span>
+
+            <button id="clear-completed"
+                    type="button"
+                    class="btn btn-ghost"
+                    disabled>
+                Очистить выполненные
+            </button>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
